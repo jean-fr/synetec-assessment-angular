@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Cities list</h4>
+            <div class="table-responsive">
+                <table id="city-table" class="table table-bordred table-striped">
+                    <thead>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Delete</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="cities.length==0">
+                            <td class="no-data" colspan="3">No data found</td>
+                        </tr>
+                        <tr *ngFor="let city of cities">
+                            <td>{{city.name}}</td>
+                            <td>{{city.description}}</td>
+                            <td>
+                                <p data-placement="top" data-toggle="tooltip" title="Delete">
+                                    <button class="btn btn-danger btn-xs" (click)="DeleteCity(city.id)"
+                                        data-title="Delete">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </button>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
