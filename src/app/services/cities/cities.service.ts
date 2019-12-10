@@ -8,8 +8,7 @@ export class CitiesService {
 
     public GetAll(): ICity[] {
         var cities: ICity[] = [];
-        var result = this._citiesEndpoint.GetAll();
-        result.subscribe(data => {
+        this._citiesEndpoint.GetAll().subscribe(data => {
             for (let c of data) {
                 cities.push({
                     id: c.id,
